@@ -54,8 +54,12 @@ class AumBot{
 	}
 
 	public function recoverAllGirls(){
-		$js = 'document.location.href = "http://www.adopteunmec.com/mySearch";';
-		ChromeCli::execute($this->tab_id,$js);
+		//$js = 'document.location.href = "http://www.adopteunmec.com/mySearch";';
+		//ChromeCli::execute($this->tab_id,$js);
+		$this->closeAllOpen();
+		ChromeCli::open("http://www.adopteunmec.com/mySearch");
+		sleep(1);
+		$this->tab_id = $this->recoverTabsId();
 		sleep(1);
 		$js = 'document.getElementById("search-form").submit();';
 		ChromeCli::execute($this->tab_id,$js);

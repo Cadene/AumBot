@@ -10,6 +10,6 @@ $aumBot->init();
 
 $aumBot->setDB(new BDD());
 
-//$aumBot->recoverAllGirls();
+$aumBot->recoverAllGirls();
 
-$aumBot->queryAllGirls();
+//$aumBot->queryAllGirls();
