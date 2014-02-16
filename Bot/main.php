@@ -5,6 +5,11 @@ include_once('lib/AumBot.php');
 $aumBot = new AumBot();
 
 $aumBot->closeAllOpen();
-//$aumBot->login();
 
-$aumBot->login();
+$aumBot->init();
+
+$aumBot->setDB(new BDD());
+
+//$aumBot->recoverAllGirls();
+
+$aumBot->queryAllGirls();

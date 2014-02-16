@@ -1,5 +1,6 @@
 <?php
 
+date_default_timezone_set('UTC');
 
 include_once('config/database.php');
 
@@ -30,23 +31,54 @@ class BDD{
 		}
 	}
 	
-	/** inscriptionvalid.php **/
 	
-	public function addGirl($girl){
+	public function addMember($member){
 		$keys = '';
 		$values = '';
 		$isFirst = true;
-		foreach($girl as $k=>$v){
-			if(!$isFirst){
-				$keys .= ',';
-				$values .= ',';
-			}else{
+		foreach($member as $k=>$v){
+			if($isFirst){
+				$keys .= '`datetime`';
+				$date = new DateTime();
+				$values .= '\''.$date->getTimestamp().'\'';
 				$isFirst = false;
 			}
-			$keys .= '`'.$k.'`';
-			$values .= '\''.$v.'\'';
+			$keys .= ',`'.$k.'`';
+			$values .= ',\''.$v.'\'';
 		}
-		$sql = "INSERT INTO `Girls` ($keys) VALUES ($values)";
+		$sql = "INSERT INTO `Members` ($keys) VALUES ($values)";
+		$insert = $this->bdd->prepare($sql);
+		return $insert->execute();
+		//return $this->bdd->lastInsertId();
+	}
+
+	public function indexMembers(){
+		$select = $this->bdd->prepare("SELECT id FROM `Members`");
+		$select->execute();
+		while($fetch = $select->fetch(PDO::FETCH_ASSOC)){
+			$rslt[] = $fetch;
+		}
+		return $rslt;
+	}
+
+	public function addProfil($profil){
+		$keys = '';
+		$values = '';
+		$isFirst = true;
+		foreach($profil as $k=>$v){
+			if($isFirst){
+				$keys .= '`datetime`';
+				$date = new DateTime();
+				$values .= '\''.$date->getTimestamp().'\'';
+				$isFirst = false;
+			}
+			$keys .= ',`'.$k.'`';
+			$values .= ',\''.$v.'\'';
+		}
+		$sql = "INSERT INTO `Profils` ($keys) VALUES ($values)";
+
+		echo $sql;
+
 		$insert = $this->bdd->prepare($sql);
 		return $insert->execute();
 		//return $this->bdd->lastInsertId();
