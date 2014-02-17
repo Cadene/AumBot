@@ -76,9 +76,6 @@ class BDD{
 			$values .= ',\''.$v.'\'';
 		}
 		$sql = "INSERT INTO `Profils` ($keys) VALUES ($values)";
-
-		echo $sql;
-
 		$insert = $this->bdd->prepare($sql);
 		return $insert->execute();
 		//return $this->bdd->lastInsertId();

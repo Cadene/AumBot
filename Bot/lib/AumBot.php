@@ -19,6 +19,8 @@ class AumBot{
 
 	protected $email;
 	protected $password;
+
+	protected static $count = 0;
 	
 	public function __construct($email=AUM_email,$password=AUM_password) {
 		$this->email = $email;
@@ -61,14 +63,22 @@ class AumBot{
 		sleep(1);
 		$this->tab_id = $this->recoverTabsId();
 		sleep(1);
+		//$done=false;
+		/*while(!$done) {
+			$subject = ChromeCli::source($this->tab_id);
+			$pattern = '/var members = (\{.+\})/';
+			preg_match($pattern, $subject, $matches);
+		}*/
 		$js = 'document.getElementById("search-form").submit();';
 		ChromeCli::execute($this->tab_id,$js);
 		sleep(1);
 		$i=1;
+		echo "test";
 		while($members = $this->recoverMembers($i)){
-			print_r($members);
+			//print_r($members);
 			$members = $members['members'];
 			foreach($members as $m) {
+				echo "recover ";
 				$this->db->addMember($m);
 			}
 			$i++;
@@ -78,15 +88,15 @@ class AumBot{
 
 	public function queryAllGirls(){
 		$members_id = $this->db->indexMembers();
-		print_r($members_id);
+		//print_r($members_id);
 		foreach($members_id as $member_id){
 			$this->queryGirl($member_id['id']);
 		}
 	}
 
 	public function queryGirl($id){
-		//$js = 'document.location.href = "http://www.adopteunmec.com/profile/"'.$id.';';
-		//ChromeCli::execute($this->tab_id,$js);
+		echo $this->count.".query:$id \n";
+		$this->count++;
 		$this->closeAllOpen();
 		ChromeCli::open("http://www.adopteunmec.com/profile/".$id);
 		sleep(1);
@@ -97,9 +107,6 @@ class AumBot{
 		//$left = $html->find('#left-content');
 		$left = $html->getElementById('left-content');
 		$right = $html->getElementById('right-content');
-		//echo $left[0]->plaintext;
-		//$right = $html->find('#right-content');
-		//echo $right[0]->save();
 		$profil = array();
 		$profil['member_id'] = $id;
 		$profil['left-content'] = addslashes($left);// = "test'' ";

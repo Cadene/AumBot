@@ -12,4 +12,4 @@ $aumBot->setDB(new BDD());
 
 $aumBot->recoverAllGirls();
 
-//$aumBot->queryAllGirls();
+$aumBot->queryAllGirls();
