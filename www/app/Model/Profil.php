@@ -3,7 +3,7 @@ App::uses('AppModel', 'Model');
 /**
  * Profil Model
  *
- * @property Member $Member
+ * @property Girl $Girl
  */
 class Profil extends AppModel {
 
@@ -13,7 +13,17 @@ class Profil extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'member_id' => array(
+		'girl_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'datetime' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -33,9 +43,9 @@ class Profil extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Member' => array(
-			'className' => 'Member',
-			'foreignKey' => 'member_id',
+		'Girl' => array(
+			'className' => 'Girl',
+			'foreignKey' => 'girl_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

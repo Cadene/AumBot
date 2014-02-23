@@ -55,8 +55,8 @@ class ProfilsController extends AppController {
 				$this->Session->setFlash(__('The profil could not be saved. Please, try again.'));
 			}
 		}
-		$members = $this->Profil->Member->find('list');
-		$this->set(compact('members'));
+		$girls = $this->Profil->Girl->find('list');
+		$this->set(compact('girls'));
 	}
 
 /**
@@ -81,8 +81,8 @@ class ProfilsController extends AppController {
 			$options = array('conditions' => array('Profil.' . $this->Profil->primaryKey => $id));
 			$this->request->data = $this->Profil->find('first', $options);
 		}
-		$members = $this->Profil->Member->find('list');
-		$this->set(compact('members'));
+		$girls = $this->Profil->Girl->find('list');
+		$this->set(compact('girls'));
 	}
 
 /**

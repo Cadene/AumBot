@@ -3,20 +3,22 @@
 	<table cellpadding="0" cellspacing="0">
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('member_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('girl_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('datetime'); ?></th>
 			<th><?php echo $this->Paginator->sort('pop-rate'); ?></th>
 			<th><?php echo $this->Paginator->sort('mails'); ?></th>
 			<th><?php echo $this->Paginator->sort('charmes'); ?></th>
 			<th><?php echo $this->Paginator->sort('visites'); ?></th>
 			<th><?php echo $this->Paginator->sort('panier'); ?></th>
+			<th><?php echo $this->Paginator->sort('left-content'); ?></th>
+			<th><?php echo $this->Paginator->sort('right-content'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($profils as $profil): ?>
 	<tr>
 		<td><?php echo h($profil['Profil']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($profil['Member']['id'], array('controller' => 'members', 'action' => 'view', $profil['Member']['id'])); ?>
+			<?php echo $this->Html->link($profil['Girl']['id'], array('controller' => 'girls', 'action' => 'view', $profil['Girl']['id'])); ?>
 		</td>
 		<td><?php echo h($profil['Profil']['datetime']); ?>&nbsp;</td>
 		<td><?php echo h($profil['Profil']['pop-rate']); ?>&nbsp;</td>
@@ -24,6 +26,8 @@
 		<td><?php echo h($profil['Profil']['charmes']); ?>&nbsp;</td>
 		<td><?php echo h($profil['Profil']['visites']); ?>&nbsp;</td>
 		<td><?php echo h($profil['Profil']['panier']); ?>&nbsp;</td>
+		<td><?php //echo h($profil['Profil']['left-content']); ?>&nbsp;</td>
+		<td><?php //echo h($profil['Profil']['right-content']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $profil['Profil']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $profil['Profil']['id'])); ?>
@@ -50,7 +54,7 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Profil'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Members'), array('controller' => 'members', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Member'), array('controller' => 'members', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Girls'), array('controller' => 'girls', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Girl'), array('controller' => 'girls', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

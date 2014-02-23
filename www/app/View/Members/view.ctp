@@ -6,6 +6,11 @@
 			<?php echo h($member['Member']['id']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Girl'); ?></dt>
+		<dd>
+			<?php echo $this->Html->link($member['Girl']['id'], array('controller' => 'girls', 'action' => 'view', $member['Girl']['id'])); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Datetime'); ?></dt>
 		<dd>
 			<?php echo h($member['Member']['datetime']); ?>
@@ -150,52 +155,7 @@
 		<li><?php echo $this->Form->postLink(__('Delete Member'), array('action' => 'delete', $member['Member']['id']), null, __('Are you sure you want to delete # %s?', $member['Member']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Members'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Member'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Profils'), array('controller' => 'profils', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Profil'), array('controller' => 'profils', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Girls'), array('controller' => 'girls', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Girl'), array('controller' => 'girls', 'action' => 'add')); ?> </li>
 	</ul>
-</div>
-<div class="related">
-	<h3><?php echo __('Related Profils'); ?></h3>
-	<?php if (!empty($member['Profil'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Member Id'); ?></th>
-		<th><?php echo __('Datetime'); ?></th>
-		<th><?php echo __('Pop-rate'); ?></th>
-		<th><?php echo __('Mails'); ?></th>
-		<th><?php echo __('Charmes'); ?></th>
-		<th><?php echo __('Visites'); ?></th>
-		<th><?php echo __('Panier'); ?></th>
-		<th><?php echo __('Left-content'); ?></th>
-		<th><?php echo __('Right-content'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($member['Profil'] as $profil): ?>
-		<tr>
-			<td><?php echo $profil['id']; ?></td>
-			<td><?php echo $profil['member_id']; ?></td>
-			<td><?php echo $profil['datetime']; ?></td>
-			<td><?php echo $profil['pop-rate']; ?></td>
-			<td><?php echo $profil['mails']; ?></td>
-			<td><?php echo $profil['charmes']; ?></td>
-			<td><?php echo $profil['visites']; ?></td>
-			<td><?php echo $profil['panier']; ?></td>
-			<td><?php echo $profil['left-content']; ?></td>
-			<td><?php echo $profil['right-content']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'profils', 'action' => 'view', $profil['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'profils', 'action' => 'edit', $profil['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'profils', 'action' => 'delete', $profil['id']), null, __('Are you sure you want to delete # %s?', $profil['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Profil'), array('controller' => 'profils', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
 </div>

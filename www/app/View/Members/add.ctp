@@ -3,6 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Member'); ?></legend>
 	<?php
+		echo $this->Form->input('girl_id');
 		echo $this->Form->input('datetime');
 		echo $this->Form->input('login');
 		echo $this->Form->input('mod_level');
@@ -39,7 +40,7 @@
 	<ul>
 
 		<li><?php echo $this->Html->link(__('List Members'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Profils'), array('controller' => 'profils', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Profil'), array('controller' => 'profils', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Girls'), array('controller' => 'girls', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Girl'), array('controller' => 'girls', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

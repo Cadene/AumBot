@@ -15,10 +15,12 @@ class ChromeCli{
 
 	public static function open($url){
 		shell_exec('chrome-cli open '.$url);
+        sleep(2);
 	}
 
 	public static function execute($tab_id,$js){
 		shell_exec('chrome-cli execute \''.$js.'\' -t '.$tab_id.';');
+        sleep(2);
 	}
 
 	public static function source($tab_id){

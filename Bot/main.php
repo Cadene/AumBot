@@ -1,15 +1,14 @@
 <?php
 
-include_once('lib/AumBot.php');
+include_once('src/AumBot.php');
 
 $aumBot = new AumBot();
 
-$aumBot->closeAllOpen();
 
-$aumBot->init();
+//$aumBot->login();
 
 $aumBot->setDB(new BDD());
 
-$aumBot->recoverAllGirls();
+//$d = $aumBot->addProfil(19246905);
 
-$aumBot->queryAllGirls();
+$aumBot->getSearchedProfils();

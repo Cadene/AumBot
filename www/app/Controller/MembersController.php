@@ -55,6 +55,8 @@ class MembersController extends AppController {
 				$this->Session->setFlash(__('The member could not be saved. Please, try again.'));
 			}
 		}
+		$girls = $this->Member->Girl->find('list');
+		$this->set(compact('girls'));
 	}
 
 /**
@@ -79,6 +81,8 @@ class MembersController extends AppController {
 			$options = array('conditions' => array('Member.' . $this->Member->primaryKey => $id));
 			$this->request->data = $this->Member->find('first', $options);
 		}
+		$girls = $this->Member->Girl->find('list');
+		$this->set(compact('girls'));
 	}
 
 /**
