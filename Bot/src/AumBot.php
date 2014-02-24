@@ -54,8 +54,6 @@ class AumBot{
 		}
 	}
 
-
-
     public function getSearchedProfils()
     {
         $d = $this->getSearchedMembers();
@@ -67,13 +65,16 @@ class AumBot{
         }
     }
 
-    public function addProfil($id){
+    public function addProfil($id)
+    {
         $profil = $this->getProfil($id);
         $girl['id'] = $this->db->addGirl($profil['girl_id']);
         $profil['id'] = $this->db->addProfil($profil);
+        $this->db->updateRatio($profil);
     }
 
-    public function getProfil($id){
+    public function getProfil($id)
+    {
         $html = new simple_html_dom();
         $d['left-content'] = null;
         while($d['left-content'] == null){
@@ -101,13 +102,11 @@ class AumBot{
     }
 
 
-
-
-    /**
-     * Récupère les données stockées dans la variable json members sur les pages mySearch
-     *
-     * @return mixed
-     */
+/**
+ * Récupère les données stockées dans la variable json members sur les pages mySearch
+ *
+ * @return
+ */
     private function getSearchedMembers()
     {
         $this->throwSearch();
@@ -122,19 +121,11 @@ class AumBot{
         return $d;
     }
 
-    private function open($url){
-        $this->closeAllOpen();
-        ChromeCli::open($url);
-        $this->tab_id = $this->recoverTabsId();
-    }
-
-    private function throwSearch(){
-        $this->open("http://www.adopteunmec.com/mySearch");
-        $this->tab_id = $this->recoverTabsId();
-        $js = 'document.getElementById("search-form").submit();';
-        ChromeCli::execute($this->tab_id,$js);
-    }
-
+/**
+ * Récupère les données stockées dans la variable json members sur la page mySearch/$page
+ *
+ * @return
+ */
     private function getMembersFromSearch($page){
         echo "getMembersFromSearch($page)"."\n";
         $this->open('http://www.adopteunmec.com/mySearch/?page='.$page);
@@ -147,8 +138,79 @@ class AumBot{
         return json_decode($matches[1],true);
     }
 
+/**
+ * Ferme tous les onglets adopte un mec et ouvre url en initialisan this->tab_id
+ *
+ * @return tab_id
+ */
+    private function open($url){
+        $this->closeAllOpen();
+        ChromeCli::open($url);
+        return $this->tab_id = $this->recoverTabsId();
+    }
+
+/**
+ * Va dans mySearch et submit()
+ *
+ * @return
+ */
+    private function throwSearch(){
+        $this->open("http://www.adopteunmec.com/mySearch");
+        $this->tab_id = $this->recoverTabsId();
+        $js = 'document.getElementById("search-form").submit();';
+        ChromeCli::execute($this->tab_id,$js);
+    }
 
 
+/**
+ * Vérifie si le formulaire de login existe sur la page d'acceuil
+ *
+ * @return boolean
+ */
+	private function isLogged(){
+        $this->open('http://www.adopteunmec.com');
+		$subject = ChromeCli::source($this->tab_id);
+		$pattern = '/<form action="http:\/\/www.adopteunmec.com\/\/auth\/login"/';
+		preg_match($pattern, $subject, $matches);
+		if(empty($matches)){
+			return true;
+		}
+		return false;
+	}
+
+/**
+ * Récupère tous les tab_id des pages adopteunmec.com
+ *
+ * @return tab_id[]
+ */
+	private function recoverTabsId(){
+		$subject = ChromeCli::listTabs();
+		$pattern = '/([0-9]{1,4})] Rencontre au supermarché des femmes/';
+		preg_match_all($pattern, $subject, $matches);
+		if(empty($matches) || empty($matches[1])){
+			return null;
+		}
+		if(count($matches[1]) == 1){
+			return $matches[1][0];
+		}
+		return $matches[1];
+	}
+
+
+/**
+ * Evalue une fille en remplissant ses attributs dans Girls
+ *
+ * @return tab_id[]
+ */
+    public function evalGirl($id){
+        $this->db->evalGirl($id);
+    }
+
+
+
+
+
+    /*
 
     public function recoveyfrMembers()
     {
@@ -189,7 +251,7 @@ class AumBot{
         print_r($girls_id);
         foreach($girls_id as $id){
             $this->queryGirl($id);
-        }/*
+        }/
 		$js = 'location.href = "http://www.adopteunmec.com/mySearch/?page='.$i.'";';
 		ChromeCli::execute($this->tab_id,$js);
 		sleep(1);
@@ -202,7 +264,7 @@ class AumBot{
 		$members = json_decode($matches[1],true);
 
 		print_r($members);
-		/*/
+		/*
 
 	}
 
@@ -234,33 +296,6 @@ class AumBot{
 		$this->db->addProfil($profil);
 		sleep(1);
 
-	}
-
-
-
-	private function isLogged(){
-		$subject = ChromeCli::source($this->tab_id);
-		$pattern = '/<form action="http:\/\/www.adopteunmec.com\/\/auth\/login"/';
-		preg_match($pattern, $subject, $matches);
-		if(empty($matches)){
-			return true;
-		}
-		return false;
-	}
-
-	private function recoverTabsId(){
-		$subject = ChromeCli::listTabs();
-		$pattern = '/([0-9]{1,4})] Rencontre au supermarché des femmes/';
-		preg_match_all($pattern, $subject, $matches);
-		if(empty($matches) || empty($matches[1])){
-			return null;
-		}
-		if(count($matches[1]) == 1){
-			return $matches[1][0];
-		}
-		return $matches[1];
-	}
-	
-		
+	}*/
 	
 }

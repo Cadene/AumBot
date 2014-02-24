@@ -9,6 +9,8 @@ $aumBot = new AumBot();
 
 $aumBot->setDB(new BDD());
 
-//$d = $aumBot->addProfil(19246905);
+//$d = $aumBot->addProfil(19318577);
 
 $aumBot->getSearchedProfils();
+
+//$aumBot->evalGirl(19318577);

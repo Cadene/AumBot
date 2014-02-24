@@ -93,6 +93,40 @@ class BDD{
 	}
 
 
+    public function evalGirl($id){
+        $sql = "SELECT Datetime, Mails, Charmes, Visites, Panier "
+            . "FROM Profils WHERE girl_id = ".$id;
+        $select = $this->bdd->prepare($sql);
+        $select->execute();
+        while($fetch = $select->fetch(PDO::FETCH_ASSOC)){
+            $members[] = $fetch;
+        }
+        if($count = count($members) > 0){
+
+
+        }
+        if($members[$count-1]['Visites'] > 0){
+            $ratio = $members[$count-1]['Charmes'] / $members[$count-1]['Visites'];
+            //$this->updateRatio($id, $ratio);
+        }
+    }
+
+    public function updateRatio($profil){
+        if($profil['visites'] > 0){
+            $ratio = $profil['charmes'] / $profil['visites'] * 100;
+            $ratio = round($ratio,2);
+            $sql = "UPDATE Girls"
+                . " SET ratio = ".$ratio.","
+                . " lastupdate = ".time()
+                . " WHERE id = ".$profil['girl_id'];
+            print_r($sql);
+            $update = $this->bdd->prepare($sql);
+            return $update->execute();
+        }
+        return false;
+    }
+
+
 	
 	
 		
