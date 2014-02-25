@@ -94,7 +94,7 @@ class BDD{
 
 
     public function evalGirl($id){
-        $sql = "SELECT Datetime, Mails, Charmes, Visites, Panier "
+        $sql = "SELECT datetime, mails, charmes, visites, panier "
             . "FROM Profils WHERE girl_id = ".$id;
         $select = $this->bdd->prepare($sql);
         $select->execute();

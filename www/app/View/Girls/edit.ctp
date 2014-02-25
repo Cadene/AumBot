@@ -9,6 +9,7 @@
 		echo $this->Form->input('dVisites');
 		echo $this->Form->input('dPanier');
 		echo $this->Form->input('lastupdate');
+		echo $this->Form->input('ratio');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

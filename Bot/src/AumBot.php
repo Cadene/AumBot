@@ -58,9 +58,7 @@ class AumBot{
     {
         $d = $this->getSearchedMembers();
         foreach($d as $member){
-           $profil = $this->getProfil($member['girl_id']);
-           $girl['id'] = $this->db->addGirl($profil['girl_id']);
-           $profil['id'] = $this->db->addProfil($profil);
+           $this->addProfil($member['girl_id']);
            $member['id'] = $this->db->addMember($member);
         }
     }

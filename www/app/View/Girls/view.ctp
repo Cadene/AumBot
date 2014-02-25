@@ -31,6 +31,11 @@
 			<?php echo h($girl['Girl']['lastupdate']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Ratio'); ?></dt>
+		<dd>
+			<?php echo h($girl['Girl']['ratio']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

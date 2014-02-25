@@ -8,6 +8,7 @@
 			<th><?php echo $this->Paginator->sort('dVisites'); ?></th>
 			<th><?php echo $this->Paginator->sort('dPanier'); ?></th>
 			<th><?php echo $this->Paginator->sort('lastupdate'); ?></th>
+			<th><?php echo $this->Paginator->sort('ratio'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($girls as $girl): ?>
@@ -18,6 +19,7 @@
 		<td><?php echo h($girl['Girl']['dVisites']); ?>&nbsp;</td>
 		<td><?php echo h($girl['Girl']['dPanier']); ?>&nbsp;</td>
 		<td><?php echo h($girl['Girl']['lastupdate']); ?>&nbsp;</td>
+		<td><?php echo h($girl['Girl']['ratio']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $girl['Girl']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $girl['Girl']['id'])); ?>

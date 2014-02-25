@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Bot/src/AumBot.php" line="89" mnemonic="5" />
+    <bookmark url="file://$PROJECT_DIR$/Bot/src/AumBot.php" line="87" mnemonic="5" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25f4e7b1-a48d-488b-bd1d-c3925eda094e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/AumBot.mwb.bak" afterPath="$PROJECT_DIR$/SQL/AumBot.mwb.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/AumBot.mwb" afterPath="$PROJECT_DIR$/SQL/AumBot.mwb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/src/AumBot.php" afterPath="$PROJECT_DIR$/Bot/src/AumBot.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/src/BDD.php" afterPath="$PROJECT_DIR$/Bot/src/BDD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/Model/Girl.php" afterPath="$PROJECT_DIR$/www/app/Model/Girl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/View/Girls/add.ctp" afterPath="$PROJECT_DIR$/www/app/View/Girls/add.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/View/Girls/edit.ctp" afterPath="$PROJECT_DIR$/www/app/View/Girls/edit.ctp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/View/Girls/index.ctp" afterPath="$PROJECT_DIR$/www/app/View/Girls/index.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bot/main.php" afterPath="$PROJECT_DIR$/Bot/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/app/View/Girls/view.ctp" afterPath="$PROJECT_DIR$/www/app/View/Girls/view.ctp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AumBot.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="25f4e7b1-a48d-488b-bd1d-c3925eda094e" time="1393252664404" ignored="false" />
-    <file path="/AumBot.php" changelist="25f4e7b1-a48d-488b-bd1d-c3925eda094e" time="1393256241895" ignored="false" />
+    <file path="/AumBot.php" changelist="25f4e7b1-a48d-488b-bd1d-c3925eda094e" time="1393351846182" ignored="false" />
     <file path="/main.php" changelist="25f4e7b1-a48d-488b-bd1d-c3925eda094e" time="1393252840103" ignored="false" />
     <file path="/ChromeCli.php" changelist="25f4e7b1-a48d-488b-bd1d-c3925eda094e" time="1393117979249" ignored="false" />
     <file path="/BDD.php" changelist="25f4e7b1-a48d-488b-bd1d-c3925eda094e" time="1393256447761" ignored="false" />
@@ -38,10 +41,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Bot/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="-8.125">
+            <state line="11" column="2" selection-start="117" selection-end="117" vertical-scroll-proportion="0.18965517">
               <folding />
             </state>
           </provider>
@@ -65,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AumBot.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AumBot.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Bot/src/AumBot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="31" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.3275862">
+            <state line="59" column="31" selection-start="1215" selection-end="1215" vertical-scroll-proportion="-7.877551">
               <folding />
             </state>
           </provider>
@@ -77,7 +80,7 @@
       <file leaf-file-name="BDD.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Bot/src/BDD.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="5" selection-start="2687" selection-end="2687" vertical-scroll-proportion="-54.375">
+            <state line="96" column="59" selection-start="2207" selection-end="2207" vertical-scroll-proportion="-6.5306125">
               <folding />
             </state>
           </provider>
@@ -113,8 +116,8 @@
         <option value="$PROJECT_DIR$/Bot/src/ChromeCli.php" />
         <option value="$PROJECT_DIR$/www/app/View/Profils/index.ctp" />
         <option value="$PROJECT_DIR$/www/app/View/Profils/view.ctp" />
-        <option value="$PROJECT_DIR$/Bot/src/AumBot.php" />
         <option value="$PROJECT_DIR$/Bot/src/BDD.php" />
+        <option value="$PROJECT_DIR$/Bot/src/AumBot.php" />
         <option value="$PROJECT_DIR$/Bot/main.php" />
       </list>
     </option>
@@ -455,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/app/View/Profils/view.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="58" selection-start="1283" selection-end="1283" vertical-scroll-proportion="-21.958334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bot/src/ChromeCli.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="3" selection-start="40" selection-end="80" vertical-scroll-proportion="-3.75">
@@ -469,23 +465,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/src/BDD.php">
+    <entry file="file://$PROJECT_DIR$/www/app/View/Profils/view.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="5" selection-start="2687" selection-end="2687" vertical-scroll-proportion="-54.375">
+        <state line="50" column="58" selection-start="1283" selection-end="1283" vertical-scroll-proportion="-21.958334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bot/main.php">
+    <entry file="file://$PROJECT_DIR$/Bot/src/BDD.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="-8.125">
+        <state line="96" column="59" selection-start="2207" selection-end="2207" vertical-scroll-proportion="-6.5306125">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Bot/src/AumBot.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="31" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.3275862">
+        <state line="59" column="31" selection-start="1215" selection-end="1215" vertical-scroll-proportion="-7.877551">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bot/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="2" selection-start="117" selection-end="117" vertical-scroll-proportion="0.18965517">
           <folding />
         </state>
       </provider>

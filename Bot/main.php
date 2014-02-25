@@ -9,7 +9,7 @@ $aumBot = new AumBot();
 
 $aumBot->setDB(new BDD());
 
-//$d = $aumBot->addProfil(19318577);
+//$d = $aumBot->addProfil(19010330);
 
 $aumBot->getSearchedProfils();
 
